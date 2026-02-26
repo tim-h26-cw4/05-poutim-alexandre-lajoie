@@ -1,6 +1,6 @@
 export default class Chef {
-  constructor() {
-    this.element;
+  constructor(element) {
+    this.element = element;
     this.menu = [];
     this.container;
     this.init();

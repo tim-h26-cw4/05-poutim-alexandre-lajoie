@@ -1,7 +1,7 @@
 export default class Poutine {
-  constructor() {
-    this.element;
-    this.types;
+  constructor(element) {
+    this.element = element;
+    this.types = element.querySelectorAll('.button');
     this.selectedType;
     this.inti();
   }
@@ -12,5 +12,13 @@ export default class Poutine {
       const button = buttons[i];
       button.addEventListener('click', this.selectedType.bind(this));
     }
+  }
+
+  selectedType(e) {
+    for (let i = 0; i < types.length; i++) {
+      const type = types[i];
+      type.classList.remove('is-active');
+    }
+    e.currentTarget.classList.add('is-active');
   }
 }
