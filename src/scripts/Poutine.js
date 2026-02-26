@@ -1,9 +1,9 @@
 export default class Poutine {
   constructor(element) {
     this.element = element;
-    this.types = element.querySelectorAll('.button');
+    this.types = document.querySelectorAll('.types');
     this.selectedType;
-    this.inti();
+    this.init();
   }
 
   init() {
@@ -20,5 +20,6 @@ export default class Poutine {
       type.classList.remove('is-active');
     }
     e.currentTarget.classList.add('is-active');
+    this.selectedType.textContent = `${e.currentTarget}`;
   }
 }

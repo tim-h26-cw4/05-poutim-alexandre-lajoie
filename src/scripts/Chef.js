@@ -1,3 +1,5 @@
+import Poutine from './Poutine.js';
+
 export default class Chef {
   constructor(element) {
     this.element = element;
@@ -7,8 +9,8 @@ export default class Chef {
   }
 
   init() {
-    const Poutine = new Poutine();
-    menu.push(Poutine);
+    const poutine = new Poutine();
+    this.menu.push(poutine);
 
     const button = document.querySelector('.button-secondary');
     button.addEventListener('click', this.sendOrder.bind(this));
