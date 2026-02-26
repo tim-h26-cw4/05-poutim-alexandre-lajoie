@@ -8,7 +8,7 @@ class Main {
   }
 
   init() {
-    const chefs = document.querySelectorAll('.chef');
+    const chefs = document.querySelectorAll('[data-component="Chef"]');
     for (let i = 0; i < chefs.length; i++) {
       const chef = chefs[i];
       new Chef(chef);
