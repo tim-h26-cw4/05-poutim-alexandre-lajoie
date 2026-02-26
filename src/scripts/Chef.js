@@ -9,12 +9,19 @@ export default class Chef {
   }
 
   init() {
-    const poutine = new Poutine();
-    this.menu.push(poutine);
+    const poutines = document.querySelectorAll('[data-component="Poutine"]');
+    for (let i = 0; i < poutines.length; i++) {
+      const poutine = poutines[i];
+      new Poutine(poutine);
+    }
+
+    console.log(this.menu);
 
     const button = document.querySelector('.button-secondary');
     button.addEventListener('click', this.sendOrder.bind(this));
   }
 
-  sendOrder() {}
+  sendOrder(e) {
+    e.currentTarget.textContent = 1;
+  }
 }
